@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Tweet;
 use Illuminate\Http\Request;
 
@@ -35,7 +36,15 @@ class TweetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate(request(), [
+            'content' => 'required|min:5'
+        ]);
+
+        $tweet = new Tweet;
+        $tweet->user_id = Auth::user()->id;
+        $tweet->content = $request->content;
+        $tweet->save();  
+        return redirect()->route('home');
     }
 
     /**
