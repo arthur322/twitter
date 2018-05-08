@@ -1,4 +1,4 @@
-@foreach(Auth::user()->tweets as $tweet)
+@foreach($tweets as $tweet)
 	<div class="card border-dark" style="margin-top: 5px">
 		<div class="card-header" style="padding-left: 40px">
 			<strong>{{ $tweet->user->name }}</strong> {{ '@'.$tweet->user->username }}

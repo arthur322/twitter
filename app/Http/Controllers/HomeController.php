@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -24,6 +25,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = Auth::user();
+        $tweets = $user->tweets;
+        foreach($user->followeds as $followed)
+        {
+            $tweets = $tweets->merge($followed->tweets);
+        }
+        $tweets = $tweets->sortByDesc('created_at');
+        return view('home', compact('tweets'));
     }
 }
