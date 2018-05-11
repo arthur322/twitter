@@ -6,10 +6,11 @@
         <div class="col-md-2">
             <div class="card border-dark">
                 <img src="{{ asset('storage/avatars/avatar.png') }}" alt="avatar" class="card-img-top">
-                <div class="card-header">
+                <div class="card-header" style="padding: 0">
                     <div class="card-body">
                         <strong>{{ Auth::user()->name }}</strong>
-                        {{ '@'. Auth::user()->username }}
+                        <p><a href="{{ route('user.show', ['user' => Auth::user()->username]) }}">
+                            {{ '@'. Auth::user()->username }}</a></p>
                     </div>
                 </div>
             </div>
@@ -34,6 +35,8 @@
                         </div>
                     @endif     
 
+                    
+
                 {{-- Tweetar --}}
                 <div class="card-header">
                     <div class="card-body">
@@ -47,7 +50,7 @@
                                     </span>
                                 @endif
                             </div>
-                            <button type="submit" class="btn btn-primary" style="float: right; width: 150px">Tweetar</button>
+                            <button id="tweet-button" type="submit" class="btn btn-primary" style="float: right; width: 100%; display: none">Tweetar</button>
                         </form>
                     </div>
                 </div>
