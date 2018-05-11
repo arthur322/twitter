@@ -6,7 +6,7 @@
 	<div class="row justify-content-md-center">
         <div class="col-md-2">
             <div class="card border-dark">
-                <img src="{{ asset('storage/avatars/avatar.png') }}" alt="avatar" class="card-img-top">
+                <img src="{{ asset('storage/avatars/'.Auth::user()->username.'.jpg) }}" alt="avatar" class="card-img-top">
                 <div class="card-header" style="padding: 0">
                     <div class="card-body">
                         <strong>{{ Auth::user()->name }}</strong>
