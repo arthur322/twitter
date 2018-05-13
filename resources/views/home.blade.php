@@ -1,6 +1,3 @@
-<?php 
-$avatar = file_exists( asset('storage/avatars/'.Auth::user()->username.'.png')) ? 'storage/avatars/'.Auth::user()->username.'.png' : 'storage/avatars/avatar.png';
-?>
 @extends('layouts.app')
 
 @section('content')
@@ -8,7 +5,7 @@ $avatar = file_exists( asset('storage/avatars/'.Auth::user()->username.'.png')) 
     <div class="row justify-content-md-center">
         <div class="col-md-2">
             <div class="card border-dark">
-                <img src="{{ asset($avatar) }}" alt="avatar" class="card-img-top">
+                <img src="{{ asset(avatar(Auth::user()->avatar)) }}" alt="avatar" class="card-img-top">
                 <div class="card-header" style="padding: 0">
                     <div class="card-body">
                         <strong>{{ Auth::user()->name }}</strong>
