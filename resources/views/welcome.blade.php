@@ -69,7 +69,7 @@
             
             <div class="content">
                 <div class="title m-b-md">
-                    Twitter
+                    Twitter~
                 </div>
                 <div class="links">
                     @if(!Auth::id())

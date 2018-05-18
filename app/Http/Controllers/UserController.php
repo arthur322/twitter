@@ -46,8 +46,9 @@ class UserController extends Controller
      */
     public function show($username)
     {
-        if($user = User::where('username', $username)->first()){            
-            return view('users.show', compact('user'));
+        if($user = User::where('username', $username)->first()){    
+            $tweets = $user->tweets->sortByDesc('created_at');
+            return view('users.show', compact('user', 'tweets'));
         }else{
             echo 'oi';
         }

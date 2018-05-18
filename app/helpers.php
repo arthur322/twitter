@@ -3,9 +3,9 @@
 if(!function_exists('avatar')){
 	function avatar($avatar){
 		if(is_null($avatar)){
-			return '/storage/avatars/avatar.png';
+			return 'storage/avatars/avatar.png';
 		}else{
-			return '/storage/'.$avatar;
+			return $avatar;
 		}
 	}
 }
