@@ -1,3 +1,7 @@
+## Twitter Clone
+Projeto usado como base de estudos para a framework Laravel, com a ideia de criar um clone para a rede social Twitter, inicialmente com as mesmas funções ou poucas alterações.
+Tenho como foco a funcionalidade primeiramente, para que após as principais funções prontas e sem erros ou bugs, focar na parte do front-end, outra área que gostaria de estudar e me desenvolver.
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
