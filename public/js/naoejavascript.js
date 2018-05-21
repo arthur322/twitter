@@ -7,9 +7,9 @@ $("textarea#content")
 			$("#tweet-button").hide("fast");
 		}
 	});
-
+/*
 $("#btn-seguir").hover(function(){
 	if($("#btn-seguir").is(':disabled')){
-		$("#btn-seguir").css("bac")
+		$("#btn-seguir").css("backgr")
 	}
-});
+});*/

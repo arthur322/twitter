@@ -29,7 +29,17 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Twitter~
                 </a>
+<<<<<<< HEAD
 
+=======
+                @if(Auth::check())
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" href="{{ route('home') }}">Home</a>
+                        <a class="nav-item nav-link" href="{{ route('user.show', ['user' => Auth::user()->username]) }}">Perfil</a>
+                        <a class="nav-item nav-link" href="{{ route('discover.show') }}">Descobrir</a>
+                    </div>
+                @endif
+>>>>>>> 807d49e9b5700a101dc10a95ee084632353fab96
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

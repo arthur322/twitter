@@ -14,10 +14,14 @@
                     </div>
                 </div>
                 <ul class="list-group list-group-flush">
-                @if(!$user->followers->contains('id', Auth::user()->id))
-                    <li class="list-group-item"><button id="btn-seguir" class="btn btn-primay">Seguir {{ $user->username }}</button></li>
+                @if(!Auth::check())
+
+                @elseif($user->followers->contains('id', Auth::user()->id))
+                    <li class="list-group-item"><a href="#" id="btn-seguir" class="btn btn-primary disabled">Já seguindo {{ $user->username }}</a></li>
+                @elseif($user->id == Auth::user()->id)
+                    <li class="list-group-item"><a href="#" class="btn btn-primary">Editar perfil</a>
                 @else
-                    <li class="list-group-item"><button id="btn-seguir" class="btn btn-primay" disabled>Você já segue {{ $user->username }}</button></li>
+                    <li class="list-group-item"><a href="#" id="btn-seguir" class="btn btn-primary">Seguir {{ $user->username }}</a></li>
                 @endif
                     <li class="list-group-item">Tweets: {{ $user->tweets->count() }}</li>
                     <li class="list-group-item">Seguidores: {{ $user->followers->count() }}</li>
