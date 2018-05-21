@@ -21,4 +21,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/home/{content}/tweet', 'TweetController@store')->name('tweet.store');
 
+Route::get('/discover', 'DiscoverController@show')->name('discover.show');
+
 Route::get('/{user}', 'UserController@show')->name('user.show');
