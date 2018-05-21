@@ -10,6 +10,7 @@ class DiscoverController extends Controller
 {
     public function show(User $user){
     	$tweets = Tweet::all()->sortByDesc('created_at');
-    	return view('discover.show', compact('tweets'));
+    	$users = User::withCount('tweets')->orderByDesc('tweets_count')->get();
+    	return view('discover.show', compact('tweets', 'users'));
     }
 }
