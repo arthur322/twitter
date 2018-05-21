@@ -11,6 +11,7 @@ Tenho como foco a funcionalidade primeiramente, para que após as principais fun
 - [ ] Listagem de seguidores e seguidos do perfil
 - [ ] Editar perfil com possibilidade de trocar avatar
 - [ ] Botão de seguir ou deixar de seguir usuário
+- [ ] Tela de notificação
 - [ ] Marcar usuários no tweet com notificação
 
 
