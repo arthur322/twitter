@@ -1,6 +1,20 @@
-## Twitter Clone
+# Twitter Clone
 Projeto usado como base de estudos para a framework Laravel, com a ideia de criar um clone para a rede social Twitter, inicialmente com as mesmas funções ou poucas alterações.
 Tenho como foco a funcionalidade primeiramente, para que após as principais funções prontas e sem erros ou bugs, focar na parte do front-end, outra área que gostaria de estudar e me desenvolver.
+
+## Task list
+- [X] Login e registro com upload de avatar
+- [X] Tela de identificação do perfil
+- [X] Tweetar
+- [X] Listagem de usuários e tweets 
+- [ ] Filtragem na lista de usuários e tweets
+- [ ] Listagem de seguidores e seguidos do perfil
+- [ ] Editar perfil com possibilidade de trocar avatar
+- [ ] Botão de seguir ou deixar de seguir usuário
+- [ ] Marcar usuários no tweet com notificação
+
+
+<hr>
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
