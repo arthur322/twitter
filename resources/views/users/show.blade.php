@@ -15,7 +15,7 @@
                 </div>
                 <ul class="list-group list-group-flush">
                 @if(!Auth::check())
-
+                    
                 @elseif($user->followers->contains('id', Auth::user()->id))
                     <li class="list-group-item"><a href="#" id="btn-seguir" class="btn btn-primary disabled">Já seguindo {{ $user->username }}</a></li>
                 @elseif($user->id == Auth::user()->id)
