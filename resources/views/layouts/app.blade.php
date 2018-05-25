@@ -25,21 +25,24 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
+
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Twitter~
                 </a>
-                @if(Auth::check())
-                    <div class="navbar-nav">
-                        <a class="nav-item nav-link" href="{{ route('home') }}">Principal</a>
-                        <a class="nav-item nav-link" href="{{ route('user.show', ['user' => Auth::user()->username]) }}">Perfil</a>
-                        <a class="nav-item nav-link" href="{{ route('discover.show') }}">Descobrir</a>
-                    </div>
-                @endif
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
+                
+                <!-- Navbar twitter -->
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    @if(Auth::check())
+                        <div class="navbar-nav">
+                            <a class="nav-item nav-link" href="{{ route('home') }}">Home</a>
+                            <a class="nav-item nav-link" href="{{ route('user.show', ['user' => Auth::user()->username]) }}">Perfil</a>
+                            <a class="nav-item nav-link" href="{{ route('discover.show') }}">Descobrir</a>
+                        </div>
+                    @endif
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
@@ -54,6 +57,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <img src="{{ asset(avatar(Auth::user()->avatar)) }}" alt="avatar" class="rounded img-fluid" style="width: 35px; height: 35px">
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
 
