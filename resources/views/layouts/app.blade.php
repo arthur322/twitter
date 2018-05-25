@@ -30,7 +30,7 @@
                 </a>
                 @if(Auth::check())
                     <div class="navbar-nav">
-                        <a class="nav-item nav-link" href="{{ route('home') }}">Home</a>
+                        <a class="nav-item nav-link" href="{{ route('home') }}">Principal</a>
                         <a class="nav-item nav-link" href="{{ route('user.show', ['user' => Auth::user()->username]) }}">Perfil</a>
                         <a class="nav-item nav-link" href="{{ route('discover.show') }}">Descobrir</a>
                     </div>

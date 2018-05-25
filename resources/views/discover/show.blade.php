@@ -4,21 +4,19 @@
 
 
 	<div class="row justify-content-md-center">
-        <div class="col-md-2">
+        <div class="col-md-6 container">
             @foreach($users as $user)
-	        	<div class="card border-dark">
-	                <img src="{{ asset(avatar($user->avatar)) }}" alt="avatar" class="card-img-top">
-	                <div class="card-header" style="padding: 0">
-	                    <div class="card-body">
+	        	<div class="card border-dark flex-item">
+	                    <div class="card-body user-discover">
+	                    	<img class="avatar-discover" src="{{ asset(avatar($user->avatar)) }}" alt="avatar">
 	                        <strong>{{ $user->name }}</strong>
-	                        <p><a href="{{ route('user.show', ['user' => $user->username]) }}">
-	                            {{ '@'. $user->username }}</a></p>
+	                        <a href="{{ route('user.show', ['user' => $user->username]) }}">
+	                             | {{ '@'. $user->username }}</a>
 	                    </div>
-	                </div>
 	            </div>
             @endforeach
         </div>
-        <div class="col-md-7">
+        <div class="col-md-5">
 			@include('tweets.show')
         </div>
 	</div>
