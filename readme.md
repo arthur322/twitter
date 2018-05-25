@@ -7,10 +7,9 @@ Tenho como foco a funcionalidade primeiramente, para que após as principais fun
 - [X] Tela de identificação do perfil
 - [X] Tweetar
 - [X] Listagem de usuários e tweets 
-- [ ] Filtragem na lista de usuários e tweets
 - [ ] Listagem de seguidores e seguidos do perfil
 - [ ] Editar perfil com possibilidade de trocar avatar
-- [ ] Botão de seguir ou deixar de seguir usuário
+- [ ] Botão de seguir ou deixar de seguir usuário funcionando
 - [ ] Tela de notificação
 - [ ] Marcar usuários no tweet com notificação
 
