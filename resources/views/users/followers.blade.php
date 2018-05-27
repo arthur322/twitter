@@ -24,7 +24,7 @@
                         </form>
                     </li>
                 @elseif($user->id == Auth::user()->id)
-                    <li class="list-group-item"><a href="{{ route('user.edit', Auth::user()->id) }}" class="btn btn-primary">Editar perfil</a>
+                    <li class="list-group-item"><a href="#" class="btn btn-primary">Editar perfil</a>
                 @else
                     <li class="list-group-item">
                         <form method="POST" action="{{ route('user.follow', $user->id) }}">
@@ -40,7 +40,8 @@
             </div>
         </div>
         <div class="col-md-7">
-			@include('tweets.show')
+            <h3>Seguidores de {{ '@'.$user->username }}</h3>
+			@include('users.follows._followers')
         </div>
 	</div>
 

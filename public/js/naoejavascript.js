@@ -7,9 +7,12 @@ $("textarea#content")
 			$("#tweet-button").hide("fast");
 		}
 	});
-/*
-$("#btn-seguir").hover(function(){
-	if($("#btn-seguir").is(':disabled')){
-		$("#btn-seguir").css("backgr")
-	}
-});*/
+
+var texto_antigo = $("#btn-unfollow").text();
+$("#btn-unfollow").hover(function(){
+	$("#btn-unfollow").css("background-color", "red").text("Deixar de seguir");
+});
+
+$("#btn-unfollow").mouseleave(function(){
+	$("#btn-unfollow").css("background-color", "#007bff").text(texto_antigo);
+});

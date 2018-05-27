@@ -23,4 +23,14 @@ Route::post('/home/{content}/tweet', 'TweetController@store')->name('tweet.store
 
 Route::get('/discover', 'DiscoverController@show')->name('discover.show');
 
+Route::post('/f/{user}', 'UserController@follow')->name('user.follow');
+
+Route::post('/u/{user}', 'UserController@unfollow')->name('user.unfollow');
+
+Route::get('/{user}/followers', 'UserController@followers')->name('user.followers');
+
+Route::get('/{user}/followeds', 'UserController@followeds')->name('user.followeds');
+
+Route::get('/{user}/edit', 'UserController@edit')->name('user.edit');
+
 Route::get('/{user}', 'UserController@show')->name('user.show');
