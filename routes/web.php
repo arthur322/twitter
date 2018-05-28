@@ -19,18 +19,22 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/home/{content}/tweet', 'TweetController@store')->name('tweet.store');
+Route::post('/home/{content}/tweet', 'TweetController@store')->name('tweet.store')->middleware('auth');
 
-Route::get('/discover', 'DiscoverController@show')->name('discover.show');
+Route::delete('/home/{tweet}/delete', 'TweetController@destroy')->name('tweet.delete')->middleware('auth');
 
-Route::post('/f/{user}', 'UserController@follow')->name('user.follow');
+Route::get('/discover', 'DiscoverController@show')->name('discover.show')->middleware('auth');
 
-Route::post('/u/{user}', 'UserController@unfollow')->name('user.unfollow');
+Route::post('/f/{user}', 'UserController@follow')->name('user.follow')->middleware('auth');
+
+Route::post('/u/{user}', 'UserController@unfollow')->name('user.unfollow')->middleware('auth');
 
 Route::get('/{user}/followers', 'UserController@followers')->name('user.followers');
 
 Route::get('/{user}/followeds', 'UserController@followeds')->name('user.followeds');
 
-Route::get('/{user}/edit', 'UserController@edit')->name('user.edit');
+Route::get('/{user}/edit', 'UserController@edit')->name('user.edit')->middleware('auth');
+
+Route::put('/{user}/edit', 'UserController@update')->name('user.update')->middleware('auth');
 
 Route::get('/{user}', 'UserController@show')->name('user.show');

@@ -13,10 +13,15 @@ if(!function_exists('avatar')){
 if(!function_exists('upload_avatar')){
 	function upload_avatar($path, $file, $username) 
 	{
-	    $filename = basename($file->getClientOriginalName(), '.'.$file->getClientOriginalExtension());
-	   	$fullPath = $path . $username . '.' . $file->getClientOriginalExtension();
-	   	Storage::disk('public')->put($fullPath, file_get_contents($file), 'public');
-	   	return '/storage/'.$fullPath;
+		if(!empty($file)){
+		    $filename = basename($file->getClientOriginalName(), '.'.$file->getClientOriginalExtension());
+		   	$fullPath = $path . $username . '.' . $file->getClientOriginalExtension();
+		   	Storage::disk('public')->put($fullPath, file_get_contents($file), 'public');
+		   	return '/storage/'.$fullPath;
+		}else{
+			return 'avatar.png';
+		}
+	   	
 	}
 }
 

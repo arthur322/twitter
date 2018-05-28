@@ -75,7 +75,12 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $array = $request->all();
+        if(!empty($array['avatar']))
+            $array['avatar'] = upload_avatar('avatars/', $array['avatar'], $array['username']);
+        $user->update($array);
+        return redirect('/home');
     }
 
     /**

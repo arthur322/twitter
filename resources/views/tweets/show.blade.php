@@ -7,6 +7,13 @@
 				<li><a href="{{ route('user.show', ['user' => $tweet->user->username]) }}">{{ '@'.$tweet->user->username }}</a>
 				 - {{ $tweet->created_at->diffForHumans(null, false, true) }}</li>
 			</ul>
+			@if($tweet->user->id == Auth::id())
+				<form method="POST" action="{{ route('tweet.delete', $tweet->id) }}">
+					@csrf
+					{{ method_field("DELETE") }}
+					<button id="btn-excluir-tweet" type="submit" class="btn btn-danger">X</button>
+				</form>
+			@endif
 		</div>
 		<div class="card-body">
 			{{ $tweet->content }}
